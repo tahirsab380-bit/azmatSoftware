@@ -1,0 +1,389 @@
+/* TablesPage.css - White theme with golden accents */
+
+.tables-container {
+  min-height: 100vh;
+  background: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  padding: 24px 32px;
+}
+
+/* Header */
+.tables-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 32px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.tables-header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #D4AF37;
+  border-radius: 2px;
+}
+
+/* Form Card */
+.table-form-card {
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.table-form-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: #D4AF37;
+}
+
+.form-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0 0 24px 0;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #F3F4F6;
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+/* Form Inputs */
+.table-input {
+  flex: 1 1 200px;
+  padding: 14px 20px;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #1F2937;
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+  min-width: 150px;
+}
+
+.table-input:focus {
+  outline: none;
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.table-input::placeholder {
+  color: #9CA3AF;
+}
+
+.table-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.table-input[type="number"]::-webkit-outer-spin-button,
+.table-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Add Table Button */
+.add-table-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #D4AF37;
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(212, 175, 55, 0.2);
+  white-space: nowrap;
+}
+
+.add-table-btn:hover {
+  background: #B8960F;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
+}
+
+.add-table-btn:active {
+  transform: translateY(0);
+}
+
+.add-table-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.add-table-btn:hover svg {
+  transform: rotate(90deg);
+}
+
+/* Tables Grid */
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Table Card */
+.table-card {
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  border-radius: 24px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.table-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #D4AF37;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.table-card:hover {
+  transform: translateY(-5px);
+  border-color: #D4AF37;
+  box-shadow: 0 20px 30px rgba(212, 175, 55, 0.1);
+}
+
+.table-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Table Card Status Variations */
+.table-card.available {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
+}
+
+.table-card.occupied {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FFFFFF 100%);
+  border-left: 4px solid #EF4444;
+}
+
+.table-card.occupied::before {
+  background: #EF4444;
+}
+
+/* Table Number */
+.table-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 8px 0;
+}
+
+/* Table Capacity */
+.table-capacity {
+  font-size: 1rem;
+  color: #6B7280;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-capacity::before {
+  content: '👥';
+  font-size: 1.1rem;
+}
+
+/* Table Status */
+.table-status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.table-status.available {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.table-status.occupied {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+/* Empty State */
+.empty-state {
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  border-radius: 30px;
+  padding: 80px 32px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4B5563;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.empty-state::before {
+  content: '🪑';
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .form-inner form {
+    flex-direction: column;
+  }
+
+  .table-input {
+    width: 100%;
+  }
+
+  .add-table-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .tables-container {
+    padding: 20px;
+  }
+
+  .tables-header {
+    font-size: 2rem;
+  }
+
+  .table-form-card {
+    padding: 24px;
+  }
+
+  .tables-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .tables-container {
+    padding: 16px;
+  }
+
+  .tables-header {
+    font-size: 1.8rem;
+  }
+
+  .table-form-card {
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .table-input {
+    padding: 12px 16px;
+  }
+
+  .table-card {
+    padding: 20px;
+  }
+
+  .table-number {
+    font-size: 1.5rem;
+  }
+
+  .empty-state {
+    padding: 60px 20px;
+  }
+}
+
+/* Animation for new table */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-card {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Hover effects for status */
+.table-card.available:hover .table-status.available {
+  background: #A7F3D0;
+  transform: scale(1.05);
+}
+
+.table-card.occupied:hover .table-status.occupied {
+  background: #FECACA;
+  transform: scale(1.05);
+}
+/* Fix extra bottom line after adding staff */
+.last-row {
+  border-bottom: none !important;
+}
+
+/* Remove any possible bottom border on table body */
+.staff-table tbody {
+  border-bottom: none !important;
+}
+
+/* Ensure container has no extra bottom border or shadow line */
+.staff-table-wrapper {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+}
+
+/* If still visible, force hide last border */
+.staff-table tr:last-child {
+  border-bottom: none !important;
+}
+.staff-table-wrapper {
+  border: 1px solid #e5e7eb; /* light mode */
+  border-bottom: none; /* force no bottom border */
+}
+
+.dark .staff-table-wrapper {
+  border: 1px solid #374151;
+  border-bottom: none;
+}

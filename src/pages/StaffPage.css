@@ -1,0 +1,330 @@
+/* StaffPage.css - Matches sidebar theme (white/light + dark mode) */
+
+/* Page Container */
+.staff-page-container{
+    overflow: hidden;
+}
+body{
+      overflow-x: hidden !important; /* No horizontal scroll */
+
+}
+.staff-page {
+  min-height: 100vh;
+  background: #f8fafc; /* Light gray-white background */
+  padding: 2.5rem 1.5rem;
+}
+
+.dark .staff-page {
+  background: #000000; /* Full black in dark mode */
+}
+
+/* Header Section */
+.staff-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .staff-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.staff-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.dark .staff-title {
+  color: #ffffff;
+}
+
+.staff-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.dark .staff-subtitle {
+  color: #9ca3af;
+}
+
+/* Add Button */
+.add-staff-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #d97706;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+  transition: all 0.3s;
+}
+
+.add-staff-btn:hover {
+  background: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+}
+
+/* Staff Table Container */
+.staff-table-container {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.dark .staff-table-container {
+  background: #111827;
+  border-color: #374151;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Table Styles */
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staff-table thead {
+  background: #f3f4f6;
+}
+
+.dark .staff-table thead {
+  background: #1f2937;
+}
+
+.staff-table th,
+.staff-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.staff-table th {
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark .staff-table th {
+  color: #9ca3af;
+}
+
+.staff-table td {
+  color: #111827;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .staff-table td {
+  color: #e5e7eb;
+  border-top-color: #374151;
+}
+
+.staff-table tr:hover {
+  background: #f9fafb;
+}
+
+.dark .staff-table tr:hover {
+  background: #1f2937;
+}
+
+/* Salary Status */
+.salary-paid {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.salary-due {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn.edit {
+  color: #d97706;
+}
+
+.action-btn.delete {
+  color: #ef4444;
+}
+
+.action-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Modal Styles */
+.staff-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.staff-modal {
+  background: white;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.dark .staff-modal {
+  background: #111827;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.dark .modal-title {
+  color: white;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.modal-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.dark .modal-label {
+  color: #9ca3af;
+}
+
+.modal-input,
+.modal-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  background: white;
+  font-size: 1rem;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.dark .modal-input,
+.dark .modal-select {
+  background: #1f2937;
+  border-color: #374151;
+  color: white;
+}
+
+.modal-input:focus,
+.modal-select:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  background: #e5e7eb;
+  color: #374151;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #d1d5db;
+}
+
+.save-btn {
+  padding: 0.75rem 1.5rem;
+  background: #d97706;
+  color: white;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  background: #b45309;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+}
+
+/* Empty State */
+.empty-state {
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.dark .empty-state {
+  color: #9ca3af;}
+  /* Remove overflow line / fake scrollbar at bottom */
+.staff-table-wrapper {
+  overflow-x: hidden !important; /* No horizontal scroll */
+  overflow-y: visible !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Force table to fit container perfectly */
+.staff-table {
+  table-layout: auto;
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+/* No bottom border or line ever */
+.staff-table tbody,
+.staff-table tbody tr:last-child,
+.staff-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Safety: hide any possible overflow artifact */
+.staff-table-wrapper::after {
+  display: none;
+}

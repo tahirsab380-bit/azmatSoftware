@@ -1,0 +1,190 @@
+/* sidebar.css - White Sidebar with Golden Border - Improved Spacing & Scroll */
+
+/* Sidebar Container */
+aside {
+  width: 280px;
+  background: #ffffff;                  /* White background */
+  border-right: 1px solid #e5e7eb;
+  border-left: 4px solid #d4af37;       /* Golden left border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.4s ease;
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+/* Logo Section */
+aside .logo-container {
+  padding: 32px 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Navigation - Improved spacing, less scroll needed */
+aside nav {
+  flex: 1;
+  padding: 24px 16px;                   /* Reduced top/bottom padding */
+  overflow-y: auto;
+  scrollbar-width: thin;                /* Better scroll look */
+  scrollbar-color: #d4af37 #f3f4f6;
+}
+
+aside nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+aside nav::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+aside nav::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 3px;
+}
+
+aside .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;                            /* Slightly bigger gap */
+  padding: 16px 20px;                   /* More comfortable padding */
+  margin: 4px 0;                        /* Tighter vertical spacing */
+  border-radius: 10px;
+  color: #374151;
+  font-size: 15.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+aside .nav-link:hover {
+  background: rgba(212, 175, 55, 0.08);
+  color: #b8860b;
+  transform: translateX(6px);
+}
+
+aside .nav-link.active {
+  background: rgba(212, 175, 55, 0.15);
+  color: #b8860b;
+  font-weight: 600;
+  border-left: 4px solid #d4af37;
+}
+
+aside .nav-link.sub-item {
+  padding-left: 60px;
+  font-size: 14.5px;
+  opacity: 0.92;
+}
+
+/* Theme & Logout - Moved lower with more space */
+.sidebar-footer {
+  padding: 32px 24px 40px;              /* Increased bottom space */
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                            /* More breathing room between buttons */
+  margin-top: auto;                     /* Pushes footer to bottom */
+}
+
+/* Theme Toggle Button */
+aside .theme-btn {
+  padding: 14px 20px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 10px;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+aside .theme-btn:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* Logout Button */
+.logout-btn {
+  padding: 14px 20px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+  color: #dc2626;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Pulse Animation (kept for active item) */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* Main Content Adjustment */
+main {
+  margin-left: 280px;
+  min-height: 100vh;
+  background: #f8fafc;                /* Light clean background */
+  color: #111827;
+  padding: 40px 30px;
+}
+/* Dark Mode Styles */
+.dark aside {
+  background: linear-gradient(180deg, #0f0f17 0%, #000000 100%);
+  border-right: 1px solid #1f1f2e;
+  border-left: 4px solid #d4af37; /* Golden border remains */
+  color: #e5e7eb;
+}
+
+.dark .logo-text {
+  color: white;
+}
+
+.dark .logo-subtitle,
+.dark .nav-link,
+.dark .theme-btn,
+.dark .logout-btn {
+  color: #e5e7eb;
+}
+
+.dark .nav-link:hover {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+}
+
+.dark .nav-link.active {
+  background: rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+}
+
+.dark .theme-btn {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.dark .logout-btn {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Light Mode (default white) remains as before */

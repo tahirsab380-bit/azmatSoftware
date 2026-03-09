@@ -1,0 +1,222 @@
+/* BillsPage.css - Complete & Updated */
+
+/* Main Container */
+.bills-container {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.dark .bills-container {
+  background: #000000;
+  color: #e5e7eb;
+}
+
+/* Header */
+.bills-header {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dark .bills-header {
+  color: #ffffff;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.dark .table-wrapper {
+  background: #111827;
+  border-color: #374151;
+}
+
+.bills-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bills-table thead {
+  background: #f3f4f6;
+}
+
+.dark .bills-table thead {
+  background: #1f2937;
+}
+
+.bills-table th,
+.bills-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .bills-table th,
+.dark .bills-table td {
+  border-bottom-color: #374151;
+}
+
+.bills-table th {
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.dark .bills-table th {
+  color: #9ca3af;
+}
+
+.customer-phone {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.dark .customer-phone {
+  color: #9ca3af;
+}
+
+.total-amount {
+  font-weight: 700;
+  color: #d97706;
+  font-size: 1.1rem;
+}
+
+.print-single-btn {
+  padding: 0.5rem 1rem;
+  background: #d97706;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.print-single-btn:hover {
+  background: #b45309;
+}
+
+/* Empty State */
+.empty-state,
+.empty-state-td {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.dark .empty-state,
+.dark .empty-state-td {
+  color: #9ca3af;
+}
+
+/* Print Preview */
+.print-preview {
+  display: none;
+}
+
+@media print {
+  .print-preview {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 9999;
+    padding: 1cm;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+  }
+
+  .bills-container > *:not(.print-preview) {
+    display: none !important;
+  }
+
+  .bill-document {
+    max-width: 8cm;
+    margin: 0 auto;
+  }
+
+  .bill-header {
+    text-align: center;
+    margin-bottom: 1cm;
+  }
+
+  .restaurant-name {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .bill-info p {
+    margin: 0.2cm 0;
+  }
+
+  .bill-customer-section {
+    margin: 0.8cm 0;
+    padding: 0.5cm 0;
+    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000;
+  }
+
+  .bill-customer-section h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.3cm;
+    text-align: center;
+  }
+
+  .bill-customer-section p {
+    margin: 0.2cm 0;
+    font-size: 0.95rem;
+  }
+
+  .bill-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.8cm 0;
+  }
+
+  .bill-items-table th,
+  .bill-items-table td {
+    padding: 0.3cm 0;
+    text-align: left;
+    border-bottom: 1px dashed #000;
+    font-size: 0.9rem;
+  }
+
+  .bill-items-table th {
+    font-weight: bold;
+  }
+
+  .bill-summary {
+    margin-top: 1cm;
+    text-align: right;
+  }
+
+  .grand-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .total-value {
+    font-size: 1.4rem;
+  }
+
+  .bill-footer {
+    text-align: center;
+    margin-top: 1.5cm;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
