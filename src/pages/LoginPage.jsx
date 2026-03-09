@@ -18,7 +18,7 @@ export default function LoginPage() {
     console.log('Login attempt with:', { email, password }); // Debug: کنسول میں دیکھو
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post('https://softbackend-eta.vercel.app/api/auth/login', {
         email,
         password
       });

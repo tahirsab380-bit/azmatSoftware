@@ -32,7 +32,7 @@ import BillsPage from './pages/BillsPage';
 import InventoryPage from './pages/InventoryPage';
 // import CustomersPage from './pages/CustomersPage';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://softbackend-eta.vercel.app/api';
 
 // Protected & Public Routes (same as before)
 function ProtectedRoute({ children }) {
