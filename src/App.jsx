@@ -39,7 +39,7 @@ function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
   return token ? children : <Navigate to="/login" replace />;
 }
-
+//some
 function PublicRoute({ children }) {
   const token = localStorage.getItem('token');
   return token ? <Navigate to="/" replace /> : children;
